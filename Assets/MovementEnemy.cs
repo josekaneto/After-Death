@@ -23,11 +23,11 @@ public class MovementEn : MonoBehaviour
 
         if (gameObject == jacare)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
         else if (gameObject == cobra)
         {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
     }
 

@@ -25,16 +25,13 @@ public class Personagem : MonoBehaviour
             TrocarPersonagem();
         }
     }
-
     public void Mover()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized;
+        Vector2 movement = new Vector2(horizontalInput, 0); 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.velocity = movement * velocidade;
+        rb.velocity = new Vector2(movement.x * velocidade, rb.velocity.y); 
 
-       
         if (horizontalInput > 0)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
@@ -74,4 +71,13 @@ public class Personagem : MonoBehaviour
             Destroy(gameObject); 
         }
     }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("tirocobra") || col.gameObject.CompareTag ("espinho"))
+        {
+            Destroy(col.gameObject);
+            Destroy(this.gameObject);
+        }
+    }
 }
+

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - enemy
   - bala
+  - tirocobra
+  - espinho
   layers:
   - Default
   - TransparentFX
