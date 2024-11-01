@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Personagem : MonoBehaviour
 {
@@ -73,10 +74,11 @@ public class Personagem : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("tirocobra") || col.gameObject.CompareTag ("espinho"))
+        if (col.gameObject.CompareTag("tirocobra") || col.gameObject.CompareTag ("espinho") || col.gameObject.CompareTag("enemy"))
         {
             Destroy(col.gameObject);
             Destroy(this.gameObject);
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
