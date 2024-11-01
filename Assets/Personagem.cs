@@ -30,7 +30,7 @@ public class Personagem : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(horizontalInput, 0); 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(movement.x * velocidade, rb.velocity.y); 
+        rb.linearVelocity = new Vector2(movement.x * velocidade, rb.linearVelocity.y); 
 
         if (horizontalInput > 0)
         {
@@ -51,7 +51,7 @@ public class Personagem : MonoBehaviour
 
          
             float direcao = transform.localScale.x > 0 ? 1 : -1;
-            temp.GetComponent<Rigidbody2D>().velocity = new Vector2(forcaDoTiro * direcao, 0);
+            temp.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(forcaDoTiro * direcao, 0);
 
             Destroy(temp.gameObject, 3f);
         }

@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<engine:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:engine="UnityEngine.UIElements"
-    xmlns:editor="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
->
-    
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgb(0, 0, 0); align-items: center; justify-content: space-around;">
+        <engine:Label text="GAME OVER" style="-unity-font-definition: url(&quot;project://database/Assets/Greek-Freak.ttf?fileID=12800000&amp;guid=2f1c8a82590112e47aac748d15c60219&amp;type=3#Greek-Freak&quot;); font-size: 100px; -unity-font-style: bold; color: rgb(255, 0, 0);" />
+        <engine:GroupBox style="height: 54%; background-image: url(&quot;project://database/Assets/Sprites/osiris.png?fileID=2800000&amp;guid=c9e09e8471f64a2498f2c359aef15fee&amp;type=3#osiris&quot;); width: 80%; margin-bottom: -65px; justify-content: flex-start; align-items: center;">
+            <engine:GroupBox style="flex-direction: row; width: 80%; justify-content: space-between; align-items: flex-end; margin-bottom: 0; margin-top: 41px;">
+                <engine:Button text="Reiniciar" style="width: 150px; -unity-font-definition: url(&quot;project://database/Assets/Greek-Freak.ttf?fileID=12800000&amp;guid=2f1c8a82590112e47aac748d15c60219&amp;type=3#Greek-Freak&quot;); height: 50px; font-size: 24px; background-color: rgba(255, 0, 0, 0); color: rgb(255, 0, 0); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px; border-left-color: rgb(255, 0, 0); border-right-color: rgb(255, 0, 0); border-top-color: rgb(255, 0, 0); border-bottom-color: rgb(255, 0, 0);" />
+                <engine:Button text="Sair" style="width: 150px; -unity-font-definition: url(&quot;project://database/Assets/Greek-Freak.ttf?fileID=12800000&amp;guid=2f1c8a82590112e47aac748d15c60219&amp;type=3#Greek-Freak&quot;); height: 50px; font-size: 24px; background-color: rgba(188, 188, 188, 0); color: rgb(255, 0, 0); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px; border-left-color: rgb(255, 0, 0); border-right-color: rgb(255, 0, 0); border-top-color: rgb(255, 0, 0); border-bottom-color: rgb(255, 0, 0);" />
+            </engine:GroupBox>
+        </engine:GroupBox>
+    </engine:VisualElement>
 </engine:UXML>

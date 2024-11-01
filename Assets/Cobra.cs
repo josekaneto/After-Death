@@ -19,7 +19,7 @@ public class Cobra : MonoBehaviour
         while (true)
         {
             Atirar();
-            yield return new WaitForSeconds(intervaloDeTiro); // Espera 3 segundos antes do próximo tiro
+            yield return new WaitForSeconds(intervaloDeTiro); // Espera 3 segundos antes do prï¿½ximo tiro
         }
     }
 
@@ -29,7 +29,7 @@ public class Cobra : MonoBehaviour
         temp.transform.position = arma.position;
 
         float direcao = transform.localScale.x > 0 ? 1 : -1;
-        temp.GetComponent<Rigidbody2D>().velocity = new Vector2(forcaDoTiro * direcao, 0);
+        temp.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(forcaDoTiro * direcao, 0);
 
         Destroy(temp.gameObject, 2f);
     }

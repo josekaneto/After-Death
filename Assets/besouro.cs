@@ -22,7 +22,7 @@ public class besouro : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized;
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.velocity = movement * velocidade;
+        rb.linearVelocity = movement * velocidade;
 
 
         if (horizontalInput > 0)

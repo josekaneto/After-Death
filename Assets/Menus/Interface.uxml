@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<engine:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:engine="UnityEngine.UIElements"
-    xmlns:editor="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
->
-    
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/menu.png?fileID=2800000&amp;guid=d19ec1a1d1c9482488a9ce65047371c2&amp;type=3#menu&quot;); width: 1532px; align-items: center; align-self: center; align-content: auto; justify-content: space-around;">
+        <engine:Label text="After Death" name="tituloAfterDeath" style="align-items: auto; font-size: 100px; -unity-font-definition: url(&quot;project://database/Assets/Greek-Freak.ttf?fileID=12800000&amp;guid=2f1c8a82590112e47aac748d15c60219&amp;type=3#Greek-Freak&quot;); -unity-font-style: bold;" />
+        <engine:GroupBox style="width: 100%; justify-content: center; align-items: center;">
+            <engine:Button text="Iniciar" name="botaoIniciar" style="-unity-font-definition: url(&quot;project://database/Assets/Greek-Freak.ttf?fileID=12800000&amp;guid=2f1c8a82590112e47aac748d15c60219&amp;type=3#Greek-Freak&quot;); width: 15%; height: 70px; justify-content: flex-start; font-size: 26px; -unity-font-style: bold; -unity-text-align: middle-center; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); -unity-background-image-tint-color: rgba(0, 0, 0, 0); background-color: rgba(188, 188, 188, 0); color: rgb(0, 0, 0);" />
+            <engine:Button text="Créditos" name="botaoCreditos" style="-unity-font-definition: url(&quot;project://database/Assets/Greek-Freak.ttf?fileID=12800000&amp;guid=2f1c8a82590112e47aac748d15c60219&amp;type=3#Greek-Freak&quot;); width: 15%; height: 70px; margin-top: 30px; margin-bottom: 20px; font-size: 26px; -unity-font-style: bold; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); background-color: rgba(55, 55, 55, 0); color: rgb(0, 0, 0);" />
+        </engine:GroupBox>
+    </engine:VisualElement>
 </engine:UXML>
