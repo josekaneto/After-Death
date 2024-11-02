@@ -20,7 +20,7 @@ public class coletavel : MonoBehaviour
         {
             Destroy(col.gameObject);
             Destroy(this.gameObject);
-            SceneManager.LoadScene("");
+            SceneManager.LoadScene("Vitoria");
         }
 
     }
