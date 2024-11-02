@@ -65,4 +65,13 @@ public class besouro : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
     }
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("enemy"))
+        {
+            Destroy(col.gameObject);
+            Destroy(this.gameObject);
+            SceneManager.LoadScene("GameOver");
+        }
+    }
 }

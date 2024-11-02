@@ -10,10 +10,19 @@ public class Personagem : MonoBehaviour
     private bool tiro;
     public float forcaDoTiro;
     public float velocidade = 5f;
+    public float jumpforce;
+    private bool pulo, isgrounded;
 
- 
     public GameObject novoPersonagemPrefab;
     private GameObject personagemTransformado;
+
+    private Rigidbody2D playerRb;  
+
+    private void Awake()
+    {
+       
+        playerRb = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
@@ -21,17 +30,26 @@ public class Personagem : MonoBehaviour
         tiro = Input.GetButtonDown("Fire1");
         Atirar();
 
+       
+        pulo = Input.GetButtonDown("Jump");
+        if (pulo && isgrounded)
+        {
+            playerRb.AddForce(new Vector2(0, jumpforce), ForceMode2D.Impulse);
+            isgrounded = false;
+        }
+
+      
         if (Input.GetKeyDown(KeyCode.R))
         {
             TrocarPersonagem();
         }
     }
+
     public void Mover()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        Vector2 movement = new Vector2(horizontalInput, 0); 
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = new Vector2(movement.x * velocidade, rb.linearVelocity.y); 
+        Vector2 movement = new Vector2(horizontalInput, 0);
+        playerRb.linearVelocity = new Vector2(movement.x * velocidade, playerRb.linearVelocity.y);
 
         if (horizontalInput > 0)
         {
@@ -50,7 +68,6 @@ public class Personagem : MonoBehaviour
             GameObject temp = Instantiate(balaProjetil);
             temp.transform.position = arma.position;
 
-         
             float direcao = transform.localScale.x > 0 ? 1 : -1;
             temp.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(forcaDoTiro * direcao, 0);
 
@@ -67,19 +84,34 @@ public class Personagem : MonoBehaviour
 
         if (novoPersonagemPrefab != null)
         {
-       
             personagemTransformado = Instantiate(novoPersonagemPrefab, transform.position, transform.rotation);
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("tirocobra") || col.gameObject.CompareTag ("espinho") || col.gameObject.CompareTag("enemy"))
+        if (col.gameObject.CompareTag("tirocobra") || col.gameObject.CompareTag("espinho") || col.gameObject.CompareTag("enemy"))
         {
             Destroy(col.gameObject);
             Destroy(this.gameObject);
             SceneManager.LoadScene("GameOver");
         }
     }
-}
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("enemy"))
+        {
+            Destroy(col.gameObject);
+            Destroy(this.gameObject);
+            SceneManager.LoadScene("GameOver");
+        }
+
+        if (col.gameObject.CompareTag("chao"))
+        {
+            isgrounded = true;
+        }
+    }
+
+}
